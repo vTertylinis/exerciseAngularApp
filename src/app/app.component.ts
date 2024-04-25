@@ -96,7 +96,7 @@ export class AppComponent {
         );
         observer.next(filteredArticles);
         observer.complete();
-      }, 1000); // Simulating 1 second delay
+      }, 750); // Simulating 1 second delay
     });
   }
 }
