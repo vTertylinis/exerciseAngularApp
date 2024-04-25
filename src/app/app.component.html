@@ -1,10 +1,13 @@
-<h1>{{ title }}</h1>
+<div class="content-container">
+  <h1>{{ title }}</h1>
 
-<input type="text" id="searchInput" [(ngModel)]="searchInputValue" placeholder="Search by keyword...">
+  <input type="text" id="searchInput" [(ngModel)]="searchInputValue" placeholder="Search by keyword..." class="search-bar">
+  <div [class.spinner]="loading" *ngIf="loading"></div> 
 
-<ul *ngIf="articles.length > 0">
-  <li *ngFor="let article of articles" class="article">
-    <h3>{{ article.title }}</h3>
-    <p>{{ article.body }}</p>
-  </li>
-</ul>
+  <ul *ngIf="articles.length > 0" class="article-list">
+    <li *ngFor="let article of articles" class="article">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.body }}</p>
+    </li>
+  </ul>
+</div>
